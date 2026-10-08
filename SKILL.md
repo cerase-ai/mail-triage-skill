@@ -11,7 +11,7 @@ The mailbox is the person's Gmail when Gmail is among your connectors, and your 
 
 ## The cursor
 
-`triage/cursor.json` in your workspace, one entry per mailbox:
+`cursor.json` in the `triage` folder of your workspace, one entry per mailbox:
 
 ```json
 {
@@ -24,7 +24,7 @@ The mailbox is the person's Gmail when Gmail is among your connectors, and your 
 
 ## Procedure
 
-1. Read `triage/cursor.json` with your file tools. No file, no entry for this mailbox, or a file you cannot read means a first triage: the last 24 hours, and the summary says so.
+1. Read the cursor with your file tools. No file, no entry for this mailbox, or a file you cannot read means a first triage: the last 24 hours, and the summary says so.
 2. Apply the person's rules in «Instructions you wrote for yourself»: what is noise, who is important, where each kind of mail goes. The hard rules below hold over them.
 3. Collect the messages, dropping every id already in `ids`.
    - Gmail: `call_recipe("gmail.search_emails", {"query": "in:inbox after:<after>", "maxResults": 200})`, or `"query": "in:inbox newer_than:1d"` on a first triage. 200 results mean more remain: see `reference.md`.
