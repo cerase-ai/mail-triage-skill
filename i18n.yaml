@@ -1,0 +1,9 @@
+# Registry display text in the platform's other locales.
+#
+# The base fields -- SKILL.md's `description` and cerase.json's -- are the SOURCE
+# locale and are English; package_translations forbids a row for it, so this file
+# can only ever hold the others. It is registry metadata: the seeder keeps it out
+# of the bundle that ships to the agent.
+it:
+  display_name: "Smistamento della posta"
+  description: "Usa quando la persona chiede di smistare o passare in rassegna la posta, o quando un messaggio programmato chiede lo smistamento della posta dall'ultimo. Legge la posta arrivata dall'ultimo smistamento, nella casella Gmail della persona o in quella dell'assistente, applica le regole di smistamento della persona e dà un solo riepilogo: da rispondere o decidere, con le bozze pronte; da leggere; notifiche e newsletter, con una proposta unica. Niente viene inviato, spostato o segnato come letto senza la risposta o l'approvazione della persona, e il messaggio o l'invito di una persona non lascia mai la posta in arrivo."

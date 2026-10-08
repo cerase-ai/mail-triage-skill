@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "namespace": "studio.guidance",
+  "name": "mail-triage",
+  "type": "skill",
+  "display_name": "Mail Triage",
+  "description": "Use when the person asks to sort or go through their mail, or when a scheduled message asks for the mail triage since the last one. It reads the mail received since the last triage, in the person's Gmail or in the assistant's own mailbox, applies the person's sorting rules, and gives one summary: to answer or decide, with drafts ready; to read; notices and newsletters, with one batch proposal. Nothing is sent, moved or marked read without the person's answer or approval, and a person's message or invitation never leaves the inbox.",
+  "license": "MIT"
+}
