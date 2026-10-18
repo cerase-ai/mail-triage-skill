@@ -20,7 +20,9 @@ The mailbox is the person's Gmail when Gmail is among your connectors, and your 
 }
 ```
 
-`ids`: every id this run's searches or list returned, skipped ones included. `after`: the unix seconds of the Date of the first search's first result, less 600 (`date -d '<Date>' +%s` in your shell). `newest`: the `received_at` of the first row listed. Reasons and edge cases: `reference.md`.
+`ids`: every id this run's searches or list returned, skipped ones included. `after`: the unix seconds of the Date of the first search's first result, less 600 (`date -d '<Date>' +%s` in your shell). `newest`: the `received_at` of the first row listed. Reasons and edge cases: `reference.md`, in this skill's folder.
+
+The cursor and `reference.md` are the only files the triage reads: open them at those paths, and do not search the filesystem for them or for anything else.
 
 ## Procedure
 
