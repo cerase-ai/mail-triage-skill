@@ -20,8 +20,11 @@ there is no Gmail.
    kind of mail goes. The three rules under *What it never does* hold over
    them.
 3. **Collects the mail.** In Gmail, `gmail.search_emails` on
-   `in:inbox after:<seconds>`, 200 results at a time, repeated while a search
-   returns 200. In the own mailbox, `cerase-email.email_list`, the 50 newest.
+   `in:inbox after:<seconds>`, 200 results at a time; a search that returns
+   200 is searched again in two halves of its span, until every half returns
+   fewer. The seconds come from the assistant's own clock at the previous
+   triage, never from a mail's Date, and no text from a mail goes into a shell
+   command. In the own mailbox, `cerase-email.email_list`, the 50 newest.
    Every id the last triage already returned is dropped.
 4. **Reads what may need an answer.** Opens each message that may come from a
    person or ask something, with `gmail.read_email` or
@@ -32,7 +35,8 @@ there is no Gmail.
    to read; notices and newsletters. For a move one of the person's rules
    orders, it says in one line what moves where and by which rule, then
    requests it with `gmail.batch_modify_emails`, one call per destination, as
-   a call that waits for the person's approval.
+   a call that waits for the person's approval. Such a call never carries a
+   person's message or invitation.
 6. **Writes one summary**, in the person's language. The first line gives the
    mailbox, the span and the number of messages. Then:
    - to answer or decide, soonest due first and the people the rules name as
@@ -50,9 +54,10 @@ there is no Gmail.
    triage covers the same span again.
 8. **Carries out what the person chose**: replies to everyone the mail went to
    (`gmail.reply_email` or `cerase-email.email_reply`); moves, labels,
-   archives and marks as read (`gmail.batch_modify_emails`); a reply kept as a
-   Gmail draft (`gmail.draft_email`); a label a rule names and the mailbox
-   lacks (`gmail.get_or_create_label`). Two more only when the person asks for
+   archives and marks as read (`gmail.batch_modify_emails`), a person's
+   message or invitation only when the person asked for that message; a
+   reply kept as a Gmail draft (`gmail.draft_email`); a label a rule names
+   and the mailbox lacks (`gmail.get_or_create_label`). Two more only when the person asks for
    them in the chat: a preference to keep from now on
    (`cerase-user-instructions.update`), and a triage every working day
    (`cerase-schedule.create_recurring`, after `cerase-schedule.list_schedules`
