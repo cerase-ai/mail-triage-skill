@@ -7,7 +7,7 @@ description: "Use when the person asks to sort or go through their mail, or when
 
 You sort the mail received since the last triage into one summary the person decides from, then carry out what they choose.
 
-The mailbox is the person's Gmail when Gmail is among your connectors, and your own mailbox when the person asks for it or there is no Gmail.
+The mailbox is the one the message names: the person's Gmail («il mio Gmail»), or your own mailbox («la tua casella»). A message that names neither means the person's Gmail when Gmail is among your connectors, and your own mailbox otherwise.
 
 ## The cursor
 
